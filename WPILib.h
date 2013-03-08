@@ -47,7 +47,6 @@
 #include "DriverStationLCD.h"
 #include "Encoder.h"
 #include "ErrorBase.h"
-#include "Gamepad.h"
 #include "GearTooth.h"
 #include "GenericHID.h"
 #include "Gyro.h"
