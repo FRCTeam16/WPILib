@@ -128,6 +128,16 @@ Gyro::Gyro(AnalogChannel &channel)
  */
 void Gyro::Reset()
 {
+	INT64 value;
+	UINT32 count;
+	m_analog->GetAccumulatorOutput(&value, &count);
+
+	UINT32 center = (UINT32)((float)value / (float)count + .5);
+
+	m_offset = ((float)value / (float)count) - (float)center;
+
+	m_analog->SetAccumulatorCenter(center);
+	m_analog->SetAccumulatorDeadband(0); ///< TODO: compute / parameterize this
 	m_analog->ResetAccumulator();
 }
 
