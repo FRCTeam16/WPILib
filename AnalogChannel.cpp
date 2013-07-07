@@ -431,7 +431,7 @@ void AnalogChannel::GetAccumulatorOutput(INT64 *value, UINT32 *count)
 double AnalogChannel::PIDGet() 
 {
 	if (StatusIsFatal()) return 0.0;
-	return GetAverageValue();
+	return GetAverageVoltage();
 }
 
 void AnalogChannel::UpdateTable() {

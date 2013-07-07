@@ -52,6 +52,7 @@ public:
 	virtual void RobotInit();
 	virtual void DisabledInit();
 	virtual void AutonomousInit();
+	virtual void AutonomousContinuous();
     virtual void TeleopInit();
     virtual void TestInit();
 
@@ -59,6 +60,7 @@ public:
 	virtual void AutonomousPeriodic();
     virtual void TeleopPeriodic();
     virtual void TestPeriodic();
+    virtual void TeleopContinuous();
 
 	void SetPeriod(double period);
 	double GetPeriod();

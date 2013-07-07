@@ -319,6 +319,28 @@ void IterativeRobot::TeleopPeriodic()
 	taskDelay(1);
 }
 
+void IterativeRobot::AutonomousContinuous()
+{
+	static bool firstRun = true;
+	if (firstRun)
+	{
+		printf("Default %s() method... Overload me!\n", __FUNCTION__);
+		firstRun = false;
+	}
+	m_ds->WaitForData();
+}
+
+void IterativeRobot::TeleopContinuous()
+{
+	static bool firstRun = true;
+	if (firstRun)
+	{
+		printf("Default %s() method... Overload me!\n", __FUNCTION__);
+		firstRun = false;
+	}
+	m_ds->WaitForData();
+}
+
 /**
  * Periodic code for test mode should go here.
  *
